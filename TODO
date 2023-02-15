@@ -1,0 +1,8 @@
+[x] Launch file to run gazebo sim and spawn robot
+[x] Update xacro file with gazebo references
+[x] Update robot spawn launch file to receive robot_prefix
+[x] Update xacro file to receive tf_prefix and topic_prefix
+[x] Verify tf and topics are correct
+[x] Add laser scan plugin
+[] Add navigation stack and match with tf and topics. We should find the way to change the params file accordingly
+[] Create launch file (spawn_multiple_turtlebot) to spawn x turtlebots, we should receie a list of xyz coordiante. It should consume spawnt_turtlebot.
