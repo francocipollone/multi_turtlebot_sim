@@ -3,8 +3,13 @@
   <xacro:include filename="$(find multi_turtlebot_sim)/urdf/gazebo_specific.urdf.xacro" />
 
   <xacro:arg name="frame_prefix" default=""/>
-  <xacro:arg name="topic_prefix" default=""/>
   <xacro:property name="frame_prefix" value="$(arg frame_prefix)"/>
+  <xacro:if value="${ frame_prefix  != ''}">
+    <!-- Adding '/' to the end of the frame_prefix -->
+    <xacro:property name="frame_prefix" value="$(arg frame_prefix)/"/>
+  </xacro:if>
+
+  <xacro:arg name="topic_prefix" default=""/>
   <xacro:property name="topic_prefix" value="$(arg topic_prefix)"/>
 
   <!-- "package://" isn't working with gazebo_ros ROS2(package is replaced by model) so it worked as a workaround to find the meshes -->

@@ -19,6 +19,7 @@ ROS 2 Version: Foxy
    - `<robot_prefix>/joint_states`
    - `<robot_prefix>/cmd_vel`
    - `<robot_prefix>/odom`
+   - `<robot_prefix>/scan`
  - Nodes should be namespaced.
    - `robot_state_publisher`: Reads robot description and:
       - Publishes `<robot_prefix>/robot_description` topic.
@@ -53,4 +54,10 @@ ros2 launch multi_turtlebot_sim spawn_turtlebot3.launch.py robot_prefix:=robot2 
 Check how the tf tree is conformed:
 ```
 ros2 run tf2_tools view_frames.py
+```
+
+- The tf tree of each robot aren't connected therefore both robots in rviz can't be seen. As the simulation is starting the odom frame for each robot in the {0,0} world position we can add a static transform between both odometry frames to achieve the full tf_tree all connected.
+
+```
+ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 robot1/odom robot2/odom
 ```

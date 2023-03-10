@@ -31,8 +31,8 @@
         <publish_odom_tf>true</publish_odom_tf>
         <publish_wheel_tf>false</publish_wheel_tf>
 
-        <odometry_frame>${frame_prefix}/odom</odometry_frame>
-        <robot_base_frame>${frame_prefix}/base_footprint</robot_base_frame>
+        <odometry_frame>${frame_prefix}odom</odometry_frame>
+        <robot_base_frame>${frame_prefix}base_footprint</robot_base_frame>
 
       </plugin>
 
@@ -46,6 +46,44 @@
         <joint_name>wheel_right_joint</joint_name>
       </plugin>
     </gazebo>
+
+    <gazebo reference="base_scan">
+      <sensor type="ray" name="base_scan">
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <pose>-0.064 0 0.121 0 0 0</pose>
+        <update_rate>5</update_rate>
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>1.000000</resolution>
+              <min_angle>0.000000</min_angle>
+              <max_angle>6.280000</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.120000</min>
+            <max>3.5</max>
+            <resolution>0.015000</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </ray>
+        <plugin name="turtlebot3_laserscan" filename="libgazebo_ros_ray_sensor.so">
+          <ros>
+            <namespace>${topic_prefix}</namespace>
+            <remapping>~/out:=scan</remapping>
+          </ros>
+          <output_type>sensor_msgs/LaserScan</output_type>
+          <frame_name>${frame_prefix}base_scan</frame_name>
+        </plugin>
+      </sensor>
+    </gazebo>
+
 	</xacro:macro>
 
 </robot>

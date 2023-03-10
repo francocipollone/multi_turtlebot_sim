@@ -6,7 +6,11 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
+        - /TF1/Tree1
+        - /TF1/Tree1/robot1/odom1
         - /RobotModel1
+        - /RobotModel1/Status1
         - /LaserScan1
       Splitter Ratio: 0.5
     Tree Height: 1147
@@ -49,33 +53,33 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
+        robot1/base_footprint:
           Value: true
-        base_link:
+        robot1/base_link:
           Value: true
-        base_scan:
+        robot1/base_scan:
           Value: true
-        camera_depth_frame:
+        robot1/camera_depth_frame:
           Value: true
-        camera_depth_optical_frame:
+        robot1/camera_depth_optical_frame:
           Value: true
-        camera_link:
+        robot1/camera_link:
           Value: true
-        camera_rgb_frame:
+        robot1/camera_rgb_frame:
           Value: true
-        camera_rgb_optical_frame:
+        robot1/camera_rgb_optical_frame:
           Value: true
-        caster_back_left_link:
+        robot1/caster_back_left_link:
           Value: true
-        caster_back_right_link:
+        robot1/caster_back_right_link:
           Value: true
-        imu_link:
+        robot1/imu_link:
           Value: true
-        odom:
+        robot1/odom:
           Value: true
-        wheel_left_link:
+        robot1/wheel_left_link:
           Value: true
-        wheel_right_link:
+        robot1/wheel_right_link:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -83,27 +87,27 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        odom:
-          base_footprint:
-            base_link:
-              base_scan:
+        robot1/odom:
+          robot1/base_footprint:
+            robot1/base_link:
+              robot1/base_scan:
                 {}
-              camera_link:
-                camera_depth_frame:
-                  camera_depth_optical_frame:
+              robot1/camera_link:
+                robot1/camera_depth_frame:
+                  robot1/camera_depth_optical_frame:
                     {}
-                camera_rgb_frame:
-                  camera_rgb_optical_frame:
+                robot1/camera_rgb_frame:
+                  robot1/camera_rgb_optical_frame:
                     {}
-              caster_back_left_link:
+              robot1/caster_back_left_link:
                 {}
-              caster_back_right_link:
+              robot1/caster_back_right_link:
                 {}
-              imu_link:
+              robot1/imu_link:
                 {}
-              wheel_left_link:
+              robot1/wheel_left_link:
                 {}
-              wheel_right_link:
+              robot1/wheel_right_link:
                 {}
       Update Interval: 0
       Value: true
@@ -117,7 +121,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /robot_description
+        Value: /robot1/robot_description
       Enabled: true
       Links:
         All Links Enabled: true
@@ -185,7 +189,7 @@ Visualization Manager:
           Show Trail: false
           Value: true
       Name: RobotModel
-      TF Prefix: ""
+      TF Prefix: robot1
       Update Interval: 0
       Value: true
       Visual Enabled: true
@@ -218,14 +222,14 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /scan
+        Value: /robot1/scan
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: robot1/base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -265,7 +269,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 9.157381057739258
+      Distance: 4.144177436828613
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1

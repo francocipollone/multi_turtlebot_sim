@@ -6,7 +6,12 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /TF1
+        - /TF1/Status1
+        - /TF1/Tree1
+        - /TF1/Tree1/robot1/odom1
         - /RobotModel1
+        - /RobotModel1/Status1
         - /LaserScan1
       Splitter Ratio: 0.5
     Tree Height: 1147
@@ -49,33 +54,61 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_footprint:
+        robot1/base_footprint:
           Value: true
-        base_link:
+        robot1/base_link:
           Value: true
-        base_scan:
+        robot1/base_scan:
           Value: true
-        camera_depth_frame:
+        robot1/camera_depth_frame:
           Value: true
-        camera_depth_optical_frame:
+        robot1/camera_depth_optical_frame:
           Value: true
-        camera_link:
+        robot1/camera_link:
           Value: true
-        camera_rgb_frame:
+        robot1/camera_rgb_frame:
           Value: true
-        camera_rgb_optical_frame:
+        robot1/camera_rgb_optical_frame:
           Value: true
-        caster_back_left_link:
+        robot1/caster_back_left_link:
           Value: true
-        caster_back_right_link:
+        robot1/caster_back_right_link:
           Value: true
-        imu_link:
+        robot1/imu_link:
           Value: true
-        odom:
+        robot1/odom:
           Value: true
-        wheel_left_link:
+        robot1/wheel_left_link:
           Value: true
-        wheel_right_link:
+        robot1/wheel_right_link:
+          Value: true
+        robot2/base_footprint:
+          Value: true
+        robot2/base_link:
+          Value: true
+        robot2/base_scan:
+          Value: true
+        robot2/camera_depth_frame:
+          Value: true
+        robot2/camera_depth_optical_frame:
+          Value: true
+        robot2/camera_link:
+          Value: true
+        robot2/camera_rgb_frame:
+          Value: true
+        robot2/camera_rgb_optical_frame:
+          Value: true
+        robot2/caster_back_left_link:
+          Value: true
+        robot2/caster_back_right_link:
+          Value: true
+        robot2/imu_link:
+          Value: true
+        robot2/odom:
+          Value: true
+        robot2/wheel_left_link:
+          Value: true
+        robot2/wheel_right_link:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -83,27 +116,49 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        odom:
-          base_footprint:
-            base_link:
-              base_scan:
+        robot1/odom:
+          robot1/base_footprint:
+            robot1/base_link:
+              robot1/base_scan:
                 {}
-              camera_link:
-                camera_depth_frame:
-                  camera_depth_optical_frame:
+              robot1/camera_link:
+                robot1/camera_depth_frame:
+                  robot1/camera_depth_optical_frame:
                     {}
-                camera_rgb_frame:
-                  camera_rgb_optical_frame:
+                robot1/camera_rgb_frame:
+                  robot1/camera_rgb_optical_frame:
                     {}
-              caster_back_left_link:
+              robot1/caster_back_left_link:
                 {}
-              caster_back_right_link:
+              robot1/caster_back_right_link:
                 {}
-              imu_link:
+              robot1/imu_link:
                 {}
-              wheel_left_link:
+              robot1/wheel_left_link:
                 {}
-              wheel_right_link:
+              robot1/wheel_right_link:
+                {}
+        robot2/odom:
+          robot2/base_footprint:
+            robot2/base_link:
+              robot2/base_scan:
+                {}
+              robot2/camera_link:
+                robot2/camera_depth_frame:
+                  robot2/camera_depth_optical_frame:
+                    {}
+                robot2/camera_rgb_frame:
+                  robot2/camera_rgb_optical_frame:
+                    {}
+              robot2/caster_back_left_link:
+                {}
+              robot2/caster_back_right_link:
+                {}
+              robot2/imu_link:
+                {}
+              robot2/wheel_left_link:
+                {}
+              robot2/wheel_right_link:
                 {}
       Update Interval: 0
       Value: true
@@ -117,7 +172,7 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /robot_description
+        Value: /robot2/robot_description
       Enabled: true
       Links:
         All Links Enabled: true
@@ -185,7 +240,7 @@ Visualization Manager:
           Show Trail: false
           Value: true
       Name: RobotModel
-      TF Prefix: ""
+      TF Prefix: robot2
       Update Interval: 0
       Value: true
       Visual Enabled: true
@@ -218,14 +273,14 @@ Visualization Manager:
         Durability Policy: Volatile
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /scan
+        Value: /robot2/scan
       Use Fixed Frame: true
       Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: base_link
+    Fixed Frame: robot2/base_footprint
     Frame Rate: 30
   Name: root
   Tools:
@@ -265,25 +320,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz_default_plugins/Orbit
-      Distance: 9.157381057739258
+      Distance: 4.027287006378174
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0
-        Y: 0
-        Z: 0
+        X: 0.21942666172981262
+        Y: 0.4853005111217499
+        Z: -0.07352327555418015
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.6003979444503784
+      Pitch: 0.7503977417945862
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 2.700397253036499
+      Yaw: 2.5753982067108154
     Saved: ~
 Window Geometry:
   Displays:
